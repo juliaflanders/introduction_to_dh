@@ -1,2 +1,0 @@
-# Yo
-## by Ben Rubin
