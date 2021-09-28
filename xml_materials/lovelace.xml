@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="./schema/out/introdh_schema_tight.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Ada Lovelace to Charles Babbage, 10 July 1843</title>
+                <author xml:id="aal">Lovelace, Ada</author>
+                <editor xml:id="jhf">Flanders, Julia</editor>
+                <respStmt xml:id="unk">
+                    <resp>Added marks to initial page</resp>
+                    <name>[unknown]</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>unpublished test document</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Page images from British Library.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="en"/>
+            </langUsage>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body hand="#aal">
+            <pb n="1"/>
+            <opener>
+                <dateline><add hand="#unk"><date>1843</date></add> <add hand="#unk">362</add> <name>Ockham</name> Monday <add hand="#unk"><date when="1843-07-10">10 July</date></add></dateline>
+                <add hand="#unk"><name>Bernoulli</name></add>
+            </opener>
+            <p>My dear <name>Babbage</name>, I am
+            <lb/>working <emph>very</emph> hard for
+            <lb/>you; like the Devil in
+            <lb/>fact; (which perhaps I <emph>am</emph>).</p>
+            <p>I <emph>think</emph> you will be
+            <lb/>pleased. I have made
+            <lb/>what appears to me some
+            <lb/>very important extensions
+            <lb/>&amp; improvements. Why I
+            <lb/>now write is to beg you
+            <pb n="2"/>
+            will send down to the
+            <lb/>Square before tomorrow
+            <lb/>evening, Brooks's Formulae,
+            <lb/>&amp;also the <title>Report of the
+            <lb/>Royal Society</title> on your 
+            <lb/>machine. I suppose you 
+            <lb/>can get it easily, &amp; I
+            <lb/>particularly want to see
+            <lb/>it, <emph>before</emph> I see <emph>you</emph> on
+            <lb/><choice><abbr>Wed<hi rend="superscript">dy</hi></abbr><expan>Wednesday</expan></choice> <choice><abbr>Mon<hi rend="superscript">g</hi></abbr><expan>Morning</expan></choice>.
+            </p>
+            <p>It appears to me
+            <lb/>that I am working up the
+            <lb/>Notes with much success;
+                <lb/>&amp; that even if the book
+                <lb/>be delayed in it's
+                <lb/>publication, a week or
+                <lb/>two, in consequence, it would
+                <lb/>be worth <name>Wm Taylor's</name> while
+                <lb/>to wait. I <emph>will</emph> have it
+                <lb/><emph>well</emph> &amp; <emph>fully</emph> done; or not
+                <lb/>at all.
+            </p>
+            <p>I want to put in 
+            <lb/>something about <name>Bernoulli's</name>
+            <lb/><title>Numbers</title>, in one of my
+            <lb/>Notes, as an example of
+            <lb/>how an implicit function
+            <lb/>may be worked out by 
+            <lb/>the engine, without having
+            <lb/>been worked out by <del hand="#aal">a</del>
+            <lb/>human head &amp; hands
+            <lb/>first. Give me the necessary
+            <lb/>data &amp; formulae.</p>
+            
+            <closer><salute>Yours ever</salute>
+            <signed><name>A. A. L</name></signed></closer>
+        </body>
+    </text>
+</TEI>

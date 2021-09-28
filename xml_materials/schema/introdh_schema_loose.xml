@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_customization.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_customization.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Introduction to Digital Humanities Transcription Language</title>
+            <author>Julia Flanders</author>
+         </titleStmt>
+         <publicationStmt>
+        <p>Available to my Intro to DH class, fall 2021</p>
+      </publicationStmt>
+         <sourceDesc>
+            <p>born digital</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <head>Introduction to Digital Humanities Transcription Language</head>
+         <p>This is a simple and constrained TEI language to support experimentation with transcription and encoding processes in an introductory digital humanities course.</p>
+         <schemaSpec ident="i2dh">     <!-- @ident is required -->
+            <desc>This is a simple and very loose, generic TEI language to support experimentation with transcription and encoding processes in an introductory digital humanities course.</desc>
+            <moduleRef key="tei"/>
+            <moduleRef key="core" include="author bibl editor head note pb pubPlace publisher resp respStmt title"/>
+            <moduleRef key="header" include="availability fileDesc handNote profileDesc language langUsage publicationStmt sourceDesc teiHeader titleStmt"/>
+            <moduleRef key="textstructure" include="back body div front TEI text"/>
+            <moduleRef key="linking" include="ab seg"></moduleRef>
+          
+<!-- Removing unnecessary attributes from elements -->
+
+<elementSpec ident="lb" module="core" mode="change">
+   <classes mode="change">
+      <memberOf key="att.typed" mode="delete"/>
+   </classes>
+</elementSpec>
+
+<elementSpec ident="name" module="core" mode="change">
+   <classes mode="change">
+      <memberOf key="att.datable" mode="delete"/>
+   </classes>
+</elementSpec>
+
+<elementSpec ident="title" module="core" mode="change">
+   <classes mode="change">
+      <memberOf key="att.datable" mode="delete"/>
+   </classes>
+</elementSpec>
+           
+           <!-- Creating syntactic sugar for obscure elements, for teaching purposes -->
+
+<elementSpec ident="ab" mode="change" module="linking">
+   <altIdent>chunk</altIdent>
+   <content>
+      <alternate minOccurs="0" maxOccurs="unbounded">
+         <textNode/>
+         <elementRef key="seg"/>
+      </alternate>
+   </content>
+</elementSpec>
+            
+<elementSpec ident="div" mode="change" module="textstructure">
+   <altIdent>section</altIdent>
+   <content>      
+         <elementRef key="ab" minOccurs="1" maxOccurs="unbounded"/>      
+   </content>
+</elementSpec>
+
+<elementSpec ident="seg" mode="change" module="linking">
+   <altIdent>segment</altIdent>
+   <content>      
+         <alternate minOccurs="0" maxOccurs="unbounded">
+            <textNode/>
+            <elementRef key="seg"/>
+         </alternate>      
+   </content>
+</elementSpec>
+
+
+            <!-- Pruning attribute classes --> 
+           
+<classRef key="att.typed" include="type subtype"/>
+<classRef key="att.global" include="xml:id n corresp"/>
+<classRef key="att.global.rendition" include="rend"/>
+<classRef key="att.identified" include="ident"/>
+            
+<!-- Deleting unwanted attribute classes -->
+<classSpec type="atts" ident="att.anchoring" mode="delete"/>
+<classSpec type="atts" ident="att.ascribed" mode="delete"/>
+<classSpec type="atts" ident="att.ascribed.directed" mode="delete"/>
+<classSpec type="atts" ident="att.breaking" mode="delete"/>
+<classSpec type="atts" ident="att.canonical" mode="delete"/>
+<classSpec type="atts" ident="att.citeStructurePart" mode="delete"/>
+<classSpec type="atts" ident="att.citing" mode="delete"/>
+<classSpec type="atts" ident="att.combinable" mode="delete"/>
+<classSpec type="atts" ident="att.coordinated" mode="delete"/>
+<classSpec type="atts" ident="att.cReferencing" mode="delete"/>
+<classSpec type="atts" ident="att.damaged" mode="delete"/>
+<classSpec type="atts" ident="att.datable" mode="delete"/>
+<classSpec type="atts" ident="att.datable.custom" mode="delete"/>
+<classSpec type="atts" ident="att.datable.iso" mode="delete"/>
+<classSpec type="atts" ident="att.datable.w3c" mode="delete"/>
+<classSpec type="atts" ident="att.datcat" mode="delete"/>
+<classSpec type="atts" ident="att.declarable" mode="delete"/>
+<classSpec type="atts" ident="att.declaring" mode="delete"/>
+<classSpec type="atts" ident="att.deprecated" mode="delete"/>
+<classSpec type="atts" ident="att.dimensions" mode="delete"/>
+<classSpec type="atts" ident="att.divLike" mode="delete"/>
+<classSpec type="atts" ident="att.docStatus" mode="delete"/>
+<classSpec type="atts" ident="att.duration" mode="delete"/>
+<classSpec type="atts" ident="att.duration.iso" mode="delete"/>
+<classSpec type="atts" ident="att.duration.w3c" mode="delete"/>
+<classSpec type="atts" ident="att.edition" mode="delete"/>
+<classSpec type="atts" ident="att.editLike" mode="delete"/>
+<classSpec type="atts" ident="att.enjamb" mode="delete"/>
+<classSpec type="atts" ident="att.entryLike" mode="delete"/>
+<classSpec type="atts" ident="att.formula" mode="delete"/>
+<classSpec type="atts" ident="att.fragmentable" mode="delete"/>
+<classSpec type="atts" ident="att.gaijiProp" mode="delete"/>
+<!--<classSpec type="atts" ident="att.global" mode="delete"/>
+-->            
+            
+<classSpec type="atts" ident="att.global.analytic" mode="delete"/>
+<classSpec type="atts" ident="att.global.change" mode="delete"/>
+<classSpec type="atts" ident="att.global.facs" mode="delete"/>
+<classSpec type="atts" ident="att.global.linking" mode="delete"/>
+            
+<!--<classSpec type="atts" ident="att.global.rendition" mode="delete"/>
+-->            
+            
+<classSpec type="atts" ident="att.global.responsibility" mode="delete"/>
+<classSpec type="atts" ident="att.global.source" mode="delete"/>
+<classSpec type="atts" ident="att.handFeatures" mode="delete"/>
+<!--<classSpec type="atts" ident="att.identified" mode="delete"/>-->
+<classSpec type="atts" ident="att.internetMedia" mode="delete"/>
+<classSpec type="atts" ident="att.interpLike" mode="delete"/>
+<classSpec type="atts" ident="att.lexicographic" mode="delete"/>
+<classSpec type="atts" ident="att.lexicographic.normalized" mode="delete"/>
+<classSpec type="atts" ident="att.linguistic" mode="delete"/>
+<classSpec type="atts" ident="att.locatable" mode="delete"/>
+<classSpec type="atts" ident="att.measurement" mode="delete"/>
+<classSpec type="atts" ident="att.media" mode="delete"/>
+<classSpec type="atts" ident="att.metrical" mode="delete"/>
+<classSpec type="atts" ident="att.milestoneUnit" mode="delete"/>
+<classSpec type="atts" ident="att.msClass" mode="delete"/>
+<classSpec type="atts" ident="att.msExcerpt" mode="delete"/>
+<classSpec type="atts" ident="att.namespaceable" mode="delete"/>
+<classSpec type="atts" ident="att.naming" mode="delete"/>
+<classSpec type="atts" ident="att.notated" mode="delete"/>
+<classSpec type="atts" ident="att.partials" mode="delete"/>
+<classSpec type="atts" ident="att.patternReplacement" mode="delete"/>
+<classSpec type="atts" ident="att.personal" mode="delete"/>
+<classSpec type="atts" ident="att.placement" mode="delete"/>
+<classSpec type="atts" ident="att.pointing" mode="delete"/>
+<classSpec type="atts" ident="att.pointing.group" mode="delete"/>
+<classSpec type="atts" ident="att.predicate" mode="delete"/>
+<classSpec type="atts" ident="att.ranging" mode="delete"/>
+<classSpec type="atts" ident="att.rdgPart" mode="delete"/>
+<classSpec type="atts" ident="att.repeatable" mode="delete"/>
+<classSpec type="atts" ident="att.resourced" mode="delete"/>
+<classSpec type="atts" ident="att.scoping" mode="delete"/>
+<classSpec type="atts" ident="att.segLike" mode="delete"/>
+<classSpec type="atts" ident="att.sortable" mode="delete"/>
+<classSpec type="atts" ident="att.spanning" mode="delete"/>
+<classSpec type="atts" ident="att.styleDef" mode="delete"/>
+<classSpec type="atts" ident="att.tableDecoration" mode="delete"/>
+<classSpec type="atts" ident="att.textCritical" mode="delete"/>
+<classSpec type="atts" ident="att.timed" mode="delete"/>
+<classSpec type="atts" ident="att.transcriptional" mode="delete"/>
+<classSpec type="atts" ident="att.translatable" mode="delete"/>
+<!--<classSpec type="atts" ident="att.typed" mode="delete"/>            -->
+<classSpec type="atts" ident="att.witnessed" mode="delete"/>
+<classSpec type="atts" ident="att.written" mode="delete"/>
+         </schemaSpec>
+      </body>
+  </text>
+</TEI>
