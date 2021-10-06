@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/jhf/Documents/Research/GitHub/introduction_to_dh/schema_writing/names1.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<IDH>
+    <name components_number="2">
+        <last_name></last_name>
+        <first_name></first_name>
+    </name>
+    <name>
+        <first_name></first_name>
+        <last_name></last_name>
+    </name>
+    
+</IDH>
