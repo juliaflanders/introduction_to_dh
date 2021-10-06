@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/temp/Documents/GitHub/introduction_to_dh/xml_materials/schema/out/SIllypoemRbf.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<poem>
+    <title>Let's Think of Eggs</title>
+    <author>Ogden Nash</author>
+    <stanza>
+        <line>Let's think of eggs-</line>
+        <line>They have no legs!</line>
+        <line>Chickens come from eggs,</line>
+        <line>But they have legs...</line>
+    </stanza>
+    <stanza>
+        <line>The plot thickens:</line>
+        <line>Eggs come from chickens</line>
+        <line>But have no legs under 'em-</line>
+        <line>What a conundrum!</line>
+    </stanza>
+</poem>
