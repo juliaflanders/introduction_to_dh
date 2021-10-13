@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <!-- The <start> element contains just the root element -->
+    <start>
+        <ref name="element.collection"/>
+    </start>
+
+    <!-- The <define> elements establish the vocabulary of the language -->
+    <define name="element.collection">
+        <element name="collection">
+            <oneOrMore>
+                <ref name="element.poem"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="element.poem">
+        <element name="poem">
+            <attribute name="type">
+                <choice>
+                    <value>ode</value>
+                    <value>sonnet</value>
+                    <value>villanelle</value>
+                </choice>
+            </attribute>
+            <ref name="element.title"/>
+            <ref name="element.author"/>
+            <choice>
+                <oneOrMore>
+                    <ref name="element.stanza"/>
+                </oneOrMore>
+                <oneOrMore>
+                    <ref name="element.line"/>
+                </oneOrMore>
+            </choice>
+        </element>
+    </define>
+    <define name="element.title">
+        <element name="title">
+            <ref name="model.mixed_content"/>
+        </element>
+    </define>
+    <define name="element.author">
+        <element name="author">
+            <text/>
+        </element>
+    </define>
+    <define name="element.stanza">
+        <element name="stanza">
+            <attribute name="type">
+                <choice>
+                    <value>quatrain</value>
+                    <value>crazy</value>
+                    <value>short</value>
+                </choice>
+            </attribute>
+            <oneOrMore>
+                <ref name="element.line"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="model.mixed_content">
+        <oneOrMore>
+            <choice>
+                <ref name="element.hi"/>
+                <ref name="element.emph"/>
+                <text/>
+            </choice>
+        </oneOrMore>
+    </define>
+
+    <define name="element.line">
+        <element name="line">
+            <optional>
+                <attribute name="n">
+                    <data type="nonNegativeInteger"/>
+                </attribute>
+            </optional>
+            <ref name="model.mixed_content"/>
+        </element>
+    </define>
+    <define name="element.emph">
+        <element name="emph">
+            <text/>
+        </element>
+    </define>
+    <define name="element.hi">
+        <element name="hi">
+            <text/>
+        </element>
+    </define>
+</grammar>

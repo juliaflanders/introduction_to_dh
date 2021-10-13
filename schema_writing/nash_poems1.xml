@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="complex_poem.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<collection>
+    <poem type="ode">
+        <title>Let's Think of Eggs</title>
+        <author>Ogden Nash</author>
+        <stanza type="crazy">
+            <line>Let's think of <hi>eggs</hi></line>
+            <line>They have no <emph>legs</emph>!</line>
+            <line>Chickens come from eggs,</line>
+            <line>But they have legs.</line>
+        </stanza>
+        <stanza type="crazy">
+            <line>The plot thickens—</line>
+            <line>Eggs come from chickens,</line>
+            <line>But have no legs under 'em—</line>
+            <line>What a conundrum!</line>
+        </stanza>
+    </poem>
+    <poem type="ode">
+        <title>Behold the Duck</title>
+        <author>Ogden Nash</author>
+        <line>Behold the duck!</line>
+        <line>It does not cluck,</line>
+        <line>A cluck it lacks—</line>
+        <line>It quacks!</line>
+        <line>It's especially fond</line>
+        <line>Of a puddle or pond;</line>
+        <line>When it dines or sups,</line>
+        <line>It bottoms-ups!</line>
+    </poem>
+</collection>
