@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <ref name="element.corpus"/>
+    </start>
+    <define name="element.corpus">
+        <element name="corpus">
+            <text/>
+            <ref name="element.header"/>
+            <ref name="element.hi"/>
+        </element>
+    </define>
+    <define name="element.header">
+        <element name="header">
+            <text/>
+        </element>
+    </define>
+    <define name="model.mixed_content">
+        <oneOrMore>
+            <choice>
+                <text/>
+                <data type="nonNegativeInteger"/>
+                <ref name="element.hi"/>
+            </choice>
+        </oneOrMore>
+    </define>
+    <define name="element.hi">
+        <element name="hi">
+            <text/>
+        </element>
+    </define>
+</grammar>
