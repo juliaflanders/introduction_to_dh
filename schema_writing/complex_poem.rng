@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <!-- The <start> element contains just the root element -->
+    <start>
+        <ref name="element.collection"/>
+    </start>
+
+    <!-- The <define> elements establish the vocabulary of the language -->
+    <define name="element.collection">
+        <element name="collection">
+            <ref name="element.header"/>
+            <oneOrMore>
+                <ref name="element.poem"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="element.header">
+        <element name="header">
+            <ref name="element.contributors"/>
+            <ref name="element.date"/>
+            <ref name="element.topics"/>
+        </element>
+    </define>
+    
+    <!-- structural elements -->
+    
+    <define name="element.topics">
+        <element name="topics">
+            <oneOrMore><ref name="element.topic"/></oneOrMore>
+        </element>
+    </define>
+    <define name="element.topic">
+        <element name="topic">
+            <attribute name="xml:id">
+                <data type="ID"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="element.poem">
+        <element name="poem">
+            <attribute name="by">
+                <data type="anyURI"/>
+            </attribute>
+            <attribute name="topic">
+                <text/>
+            </attribute>
+            <attribute name="type">
+                <choice>
+                    <value>ode</value>
+                    <a:documentation>A poem in the ode form, with an irregular structure</a:documentation>
+                    <value>sonnet</value>
+                    <a:documentation>A poem with four rhymed quatrains and a concluding couplet, or with two rhymed quatrains and a concluding sestet.</a:documentation>
+                    <value>villanelle</value>
+                    <a:documentation>A poem with a structure too complicated to describe here.</a:documentation>
+                    <value>stanzaic</value>
+                    <a:documentation>A poem with a regular structure of stanzas.</a:documentation>
+                </choice>
+            </attribute>
+            <ref name="element.title"/>
+            <choice>
+                <oneOrMore>
+                    <ref name="element.stanza"/>
+                </oneOrMore>
+                <oneOrMore>
+                    <ref name="element.line"/>
+                </oneOrMore>
+            </choice>
+        </element>
+    </define>
+    <define name="element.stanza">
+        <element name="stanza">
+            <attribute name="type">
+                <choice>
+                    <value>quatrain</value>
+                    <value>crazy</value>
+                    <value>short</value>
+                </choice>
+            </attribute>
+            <oneOrMore>
+                <ref name="element.line"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="element.line">
+        <element name="line">
+            <optional>
+                <attribute name="n">
+                    <data type="nonNegativeInteger"/>
+                </attribute>
+            </optional>
+            <ref name="model.mixed_content"/>
+        </element>
+    </define>
+    
+    <!-- phrase-level elements -->
+    <define name="element.title">
+        <element name="title">
+            <ref name="model.mixed_content"/>
+        </element>
+    </define>
+    <define name="element.contributors">
+        <element name="contributors">
+            <oneOrMore>
+                <ref name="element.author"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="element.author">
+        <element name="author">
+            <attribute name="xml:id">
+                <data type="ID"></data>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="element.date">
+        <element name="date">
+            <data type="date"/>
+        </element>
+    </define>
+    <define name="element.emph">
+        <element name="emph">
+            <text/>
+        </element>
+    </define>
+    <define name="element.hi">
+        <element name="hi">
+            <text/>
+        </element>
+    </define>
+    
+    <!-- reusable models -->
+    <define name="model.mixed_content">
+        <oneOrMore>
+            <choice>
+                <ref name="element.hi"/>
+                <ref name="element.emph"/>
+                <text/>
+            </choice>
+        </oneOrMore>
+    </define>
+
+    
+</grammar>

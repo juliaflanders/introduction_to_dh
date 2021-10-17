@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="IDH">
+            <oneOrMore>
+                <element name="name">
+                    <optional>
+                        <attribute name="components_number">
+                            <data type="nonNegativeInteger"/>
+                        </attribute>
+                    </optional>
+                    <interleave>
+                        <zeroOrMore>
+                            <element name="honorific">
+                                <text/>
+                            </element>
+                        </zeroOrMore>
+                        <zeroOrMore>
+                            <element name="first_name">
+                                <text/>
+                            </element>
+                        </zeroOrMore>
+                        <element name="last_name">
+                            <text/>
+                        </element>
+                    </interleave>
+                </element>
+            </oneOrMore>
+        </element>
+    </start>
+</grammar>

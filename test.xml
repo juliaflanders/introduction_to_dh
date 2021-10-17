@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="./schema/out/introdh_schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>[your title here]</title>
+                <author xml:id="">[author name]</author>
+                <editor xml:id="">[your name]</editor>
+            </titleStmt>
+            <publicationStmt>
+                <p>unpublished test document</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>[description of the source]</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident=""/>
+                <!-- See the TEI element list for some common language identifiers -->
+            </langUsage>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <pb n="1"/>
+            <!-- your transcription goes here -->
+            
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="collection">
+            <oneOrMore>
+                <element name="poem">
+                    <element name="title">
+                        <text/>
+                    </element>
+                    <element name="author">
+                        <text/>
+                    </element>
+                    <oneOrMore>
+                        <choice>
+                            <oneOrMore>
+                                <element name="line">
+                                    <attribute name="n">
+                                        <data type="nonNegativeInteger"/>
+                                    </attribute>
+                                    <text/>
+                                </element>
+                            </oneOrMore>
+                            <oneOrMore>
+                                <element name="stanza">
+                                    <oneOrMore>
+                                        <element name="line">
+                                            <text/>
+                                        </element>
+                                    </oneOrMore>
+                                </element>
+                            </oneOrMore>
+                        </choice>
+                    </oneOrMore>
+                </element>
+            </oneOrMore>
+        </element>
+    </start>
+</grammar>
