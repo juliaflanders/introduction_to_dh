@@ -3,7 +3,8 @@
 <collection>
     <header>
         <contributors>
-            <author xml:id="ogden_nash"></author>
+            <author xml:id="ogden_nash">Ogden Nash, 1880-1980</author>
+            <author xml:id="e_dickinson"></author>
         </contributors>
         <date>2021-10-14</date>
         <topics>
@@ -11,13 +12,13 @@
             <topic xml:id="poultry">Anything related to poultry</topic>
         </topics>
     </header>
-    <poem type="stanzaic" by="#ogden_nash" topic="#eggs #poultry"> 
-        <title>Let's Think of Eggs</title>
+    <poem lang="en" type="stanzaic" by="#ogden_nash" topic="#eggs #poultry"> 
+        <title>Let's Think of <term>Eggs</term></title>
         <stanza type="crazy">
             <line>Let's think of <hi>eggs</hi></line>
             <line>They have no <emph>legs</emph>!</line>
-            <line>Chickens come from eggs,</line>
-            <line>But they have legs.</line>
+            <line><term>Chickens</term> come from <emph>eggs</emph>,</line>
+            <line>But they have <hi>legs</hi>.</line>
         </stanza>
         <stanza type="crazy">
             <line>The plot thickens—</line>
@@ -26,7 +27,7 @@
             <line>What a conundrum!</line>
         </stanza>
     </poem>
-    <poem type="ode" topic="poultry" by="#ogden_nash">
+    <poem lang="en" type="ode" topic="poultry" by="#ogden_nash">
         <title>Behold the Duck</title>
         <line>Behold the duck!</line>
         <line>It does not cluck,</line>
@@ -37,7 +38,7 @@
         <line>When it dines or sups,</line>
         <line>It bottoms-ups!</line>
     </poem>
-    <poem by="#emily_dickinson" topic="#poultry" type="stanzaic">
+    <poem lang="en" by="#emily_dickinson" topic="#poultry" type="stanzaic">
         <title>A Bird Came Down the Walk</title>
         <stanza type="quatrain">
             <line>A bird came down the Walk —</line>

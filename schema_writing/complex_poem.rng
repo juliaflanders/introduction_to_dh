@@ -41,11 +41,19 @@
     </define>
     <define name="element.poem">
         <element name="poem">
+            <attribute name="lang">
+                <choice>
+                    <value>en</value>
+                    <value>es</value>
+                </choice>
+            </attribute>
             <attribute name="by">
                 <data type="anyURI"/>
             </attribute>
             <attribute name="topic">
-                <text/>
+                <list>
+                    <oneOrMore><data type="anyURI"></data></oneOrMore>
+                </list>
             </attribute>
             <attribute name="type">
                 <choice>
@@ -132,6 +140,11 @@
             <text/>
         </element>
     </define>
+    <define name="element.term">
+        <element name="term">
+            <text/>
+        </element>
+    </define>
     
     <!-- reusable models -->
     <define name="model.mixed_content">
@@ -139,10 +152,10 @@
             <choice>
                 <ref name="element.hi"/>
                 <ref name="element.emph"/>
+                <ref name="element.term"/>
                 <text/>
             </choice>
         </oneOrMore>
     </define>
-
     
 </grammar>
