@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="file:/Users/temp/Documents/GitHub/introduction_to_dh/xml_materials/schema/out/SIllypoemRbf.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<poem>
+<poem xmlns="https://roxannefaure.github.io/ns/1.0">
     <title>Let's Think of Eggs</title>
     <author>Ogden Nash</author>
     <stanza>
