@@ -135,6 +135,11 @@
             <text/>
         </element>
     </define>
+    <define name="element.lb">
+        <element name="lb">
+            <empty/>
+        </element>
+    </define>
     <define name="element.hi">
         <element name="hi">
             <text/>
