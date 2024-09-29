@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/jhf/Documents/Research/GitHub/introduction_to_dh/xml_materials/introdh_2024.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<!-- Fill out the metadata fields below -->
+		<fileDesc>
+			<titleStmt>
+				<title>[Your title for the document here]</title>
+			</titleStmt>
+			<publicationStmt>
+				<p>An experimental file created for a class.</p>
+			</publicationStmt>
+			<sourceDesc>
+				<bibl>
+					<author>[Author name here]</author>
+					<date>[Date of creation here]</date>
+				</bibl>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<!-- Use the template below to get started on your transcription of the text of the document. You can add and delete TEI elements as you like, depending on what you see in your particular document. Use the element crib sheet as a quick lookup for the most common elements, and feel free to explore the TEI Guidelines element reference for more detail and a LOT more elements: https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html -->
+		<body>
+			<dateline>
+				<date></date>
+				<placeName></placeName>
+			</dateline>
+			<p>[content of the first paragraph here]</p>	
+			<closer></closer>
+			<postscript><p>[delete if not needed]</p></postscript>
+		</body>
+	</text>
+</TEI>
